@@ -17,12 +17,12 @@ Theater is the most populus US kickstarter category, and theater campaigns have 
 **Figure 2:** US theater subcategory kickstarter outcomes.
 ![Subcategory Outcomes](https://user-images.githubusercontent.com/8708809/117568432-2b1b8300-b08e-11eb-84ca-0bb0af41e077.png)
 
-**Figure 3: **US theaster kickstarter outcomes depending on launch date.
+**Figure 3:** US theaster kickstarter outcomes depending on launch date.
 ![Outcomes Based o Launch Date](https://user-images.githubusercontent.com/8708809/117568694-c2cda100-b08f-11eb-99cf-5ab8c73825c3.png)
 
 Examing the fund raising goals and pledges for US plays data visually is difficult, because the bulk of the data is compressed into a small area of the chart, by a small number of high goal kickstarters **(Fig. 4)**.  However, the bulk of successful theater fundraising campaigns had lower fund raising goals than failed campaigns **(range Successful: 1.5-5K$, range failed: 2-10K$, Table 1)**.  Louise's budget is therefore outside the typical range for successful campaigns.  Interestingly, despite asking for less money, successful campaigns tended to earn greater pledges than failed campaigns.  This shows that campaigns did not earn comenstorate pledges to successful campaigns and subsequently fail simply because their goals were higher.
 
-**Figure 4: **US play kickstarter goals versus pledges.
+**Figure 4:** US play kickstarter goals versus pledges.
 ![US Kickstaers](https://user-images.githubusercontent.com/8708809/117569570-4d180400-b094-11eb-8797-f55a1cc29380.png)
 
 **Table 1:** Goals and subsequent pledges for US theater kickerstarters.
@@ -33,13 +33,13 @@ Examing the fund raising goals and pledges for US plays data visually is difficu
 
 Musicals are the most popular subcategory in the theater catagory for Great Britain **(Figure 5)**.  Comparing the goals of these campaigns to the pledge amount shows that the bulk of the pledges are less than 2KGBP, which is less than half of Louise's proposed budget **(Fig. 6)**.  Of the five plays Louise had expressed interest in, three of the five had goals of 2KGB and four earned more than that amount **(Table 2)**.  This values would place them among the most successful musical kickstarter campaigns.
 
-Figure 5: GB theater subcategory kickstarter outcomes.
+**Figure 5:** GB theater subcategory kickstarter outcomes.
 ![Success of GB Plays](https://user-images.githubusercontent.com/8708809/117570579-b1d55d80-b098-11eb-9a28-9c186625986a.png)
 
-Figure 6: GB musical kickstarter goals versus pledges.
+**Figure 6:** GB musical kickstarter goals versus pledges.
 ![GB Kickstaers](https://user-images.githubusercontent.com/8708809/117570566-a71ac880-b098-11eb-9398-3511fbf68575.png)
 
-Table 2: Goal and donation information of targeted Edinburgh plays.
+**Table 2:** Goal and donation information of targeted Edinburgh plays.
 ![Edibourough](https://user-images.githubusercontent.com/8708809/117570956-85224580-b09a-11eb-97fe-2c28845784f0.png)
 
 ## Conclusions:
