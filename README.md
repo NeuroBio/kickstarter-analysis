@@ -7,6 +7,7 @@ Louise would like to successful fund her US play production, Fever.  Should this
 Using data from past kickstarter campaigns, we seek to advise her on the differences between successful and failed theater kickstarter campaigns so she can make decisions to improve her chances of success.
 
 ##Results:
+
 ###US Theater and Plays
 Theater is the most populus US kickstarter category, and theater campaigns have a high rate of success relative to other kickstart campaign catagories, though music is the most successful catagory (Fig. 1).  Taking a deeper look at the theater subcategories show that plays are the most common US theater campaign subcategory (Fig. 2).  Interestingly, there was a spike in the likelihood of success for theater kickstarter campaigns that began in May (Fig. 3).  For comparison, successes and failures rise at a similar rate for campaigns begun in April, suggesting that there is simply an increase in the number of theater campaigns in April.  This success spike in May tapers off as the year progresses, reaching its lowest point in December.  
 
