@@ -1,46 +1,44 @@
-# An Analysis of Kickstarter Campaigns
+# Kickstarting with Excel: An analysis of the correlations between the success or failure of theatrical fundraising campaigns on Kickstarter and their launch date or funding goal
 
-A analysis of questionably real kickstarter campaigns to help decidedly fake Louise make decisions on how to perform one US play kickstarter fundraising campaign and, potentially, a GB musical kickerstarter fundraising campaign.
-
-## Premise:
-Louise would like to successful fund her US play production, _Fever_.  Should this be successful, she would then seek to fund a GB musical idea.
-Using data from past kickstarter campaigns, we seek to advise her on the differences between successful and failed theater kickstarter campaigns so she can make decisions to improve her chances of success.
-
-## Results:
-
-### US Theater and Plays
-Theater is the most populus US kickstarter category, and theater campaigns have a high rate of success relative to other kickstart campaign catagories, though music is the most successful catagory **(Fig. 1)**.  Taking a deeper look at the theater subcategories show that plays are the most common US theater campaign subcategory **(Fig. 2)**.  Interestingly, there was a spike in the likelihood of success for theater kickstarter campaigns that began in May **(Fig. 3)**.  For comparison, successes and failures rise at a similar rate for campaigns begun in April, suggesting that there is simply an increase in the number of theater campaigns in April.  This success spike in May tapers off as the year progresses, reaching its lowest point in December.  
-
-**Figure 1:** US theater parent category kickstarter outcomes.
-![Parent Category Outcomes](https://user-images.githubusercontent.com/8708809/117568301-89943180-b08d-11eb-81ce-6e6787b0684c.png)
-
-**Figure 2:** US theater subcategory kickstarter outcomes.
-![Subcategory Outcomes](https://user-images.githubusercontent.com/8708809/117568432-2b1b8300-b08e-11eb-84ca-0bb0af41e077.png)
-
-**Figure 3:** US theaster kickstarter outcomes depending on launch date.
-![Outcomes Based o Launch Date](https://user-images.githubusercontent.com/8708809/117568694-c2cda100-b08f-11eb-99cf-5ab8c73825c3.png)
-
-Examing the fund raising goals and pledges for US plays data visually is difficult, because the bulk of the data is compressed into a small area of the chart, by a small number of high goal kickstarters **(Fig. 4)**.  However, the bulk of successful theater fundraising campaigns had lower fund raising goals than failed campaigns **(range Successful: 1.5-5K$, range failed: 2-10K$, Table 1)**.  Louise's budget is therefore outside the typical range for successful campaigns.  Interestingly, despite asking for less money, successful campaigns tended to earn greater pledges than failed campaigns.  This shows that campaigns did not earn comenstorate pledges to successful campaigns and subsequently fail simply because their goals were higher.
-
-**Figure 4:** US play kickstarter goals versus pledges.
-![US Kickstaers](https://user-images.githubusercontent.com/8708809/117569570-4d180400-b094-11eb-8797-f55a1cc29380.png)
-
-**Table 1:** Goals and subsequent pledges for US theater kickerstarters.
-![Descriptive Stats](https://user-images.githubusercontent.com/8708809/117569722-17bfe600-b095-11eb-8357-517f1234bfc7.png)
+## Overview of Project
+### Purpose
+The client, Louise, is interested in using Kickstarter to fund theatrical performances and wants to maximize her chances of being successfully funded.  Although her first fundraising campaign for _Fever_ is going well, she would like further insight on how the launch date and funding goal affect the success rate of these fundraisers.  Towards this end, I will analyze Kickstarter data from prior fundraising campaigns to better understand how these variables correlate with fundraiser outcomes.  This information will be used to advise Louise on when to start future fundraisers and what to set the fundraising goal as to maximize her likelihood of success.
 
 
-### GB Theater and Musicals:
+## Analysis and Challenges
+### Analysis of Outcomes Based on Launch Date
+To examine the relationship between launch date and fundraising outcome, previously collected data from Kickstarter ([Kickstarter_Challenge](Kickstarter_Challenge.xlsx), sheet: _Kickstarter_) were filtered to include only data regarding theater category Kickstarters.  Unix format launch dates were first converted to a human-readable date format and then further converted into year data using the `YEAR()` function. The “Live” outcome was filtered out from the data as the success of these fundraisers is not yet known.  Counts were calculated for the number of successful, failed, and canceled theater fundraisers each month, and this data was plotted **(Fig. 1)**.  An interactive pivot table associated with this data exists in [Kickstarter_Challenge](Kickstarter_Challenge.xlsx) (sheet: _Theater Outcomes by Launch Date_) that allows the user to filter on the included fundraiser categories and years.  All subsequent analysis was done based on the visual appraisal without statistical testing.
 
-Musicals are the most popular subcategory in the theater catagory for Great Britain **(Figure 5)**.  Comparing the goals of these campaigns to the pledge amount shows that the bulk of the pledges are less than 2KGBP, which is less than half of Louise's proposed budget **(Fig. 6)**.  Of the five plays Louise had expressed interest in, three of the five had goals of 2KGB and four earned more than that amount **(Table 2)**.  This values would place them among the most successful musical kickstarter campaigns.
+![Theater Outcomes vs Launch](/resources/Theater_Outcomes_vs_Launch.png?raw=true)
+**Figure 1:** The number of successful theater Kickstarter fundraisers depending on launch date.  Includes fundraisers with an outcome of successful, canceled, or failed from the theater catagory occuring between May 2009 and March 2017.
 
-**Figure 5:** GB theater subcategory kickstarter outcomes.
-![Success of GB Plays](https://user-images.githubusercontent.com/8708809/117570579-b1d55d80-b098-11eb-9a28-9c186625986a.png)
 
-**Figure 6:** GB musical kickstarter goals versus pledges.
-![GB Kickstaers](https://user-images.githubusercontent.com/8708809/117570566-a71ac880-b098-11eb-9398-3511fbf68575.png)
+### Analysis of Outcomes Based on Goals
+To examine the relationship between funding goal and fundraising outcome, fundraising goals from complete play fundraisers in the Kickstarter data ([Kickstarter_Challenge](Kickstarter_Challenge.xlsx), sheet: _Kickstarter_) were divided into bins using the `COUNTIFS()` function.  Most bins were equal increments of 5000$, however the first two bins were smaller (0-999$ and 1000$-4999$) and the final bin had no upper limit (50,000$ or more).  The percentage of fundraisers in each bin that were successful, failed, or canceled was calculated by totaling the number of campaigns in each bin with the `SUM()` function and then diving the number of successful, failed, and canceled campaigns by that total.  This data was then plotted **(Fig. 2)**.  This data exists in [Kickstarter_Challenge](Kickstarter_Challenge.xlsx) (sheet: _Outcomes Based on Goals_).  All subsequent analysis was done based on the visual appraisal without statistical testing.
 
-**Table 2:** Goal and donation information of targeted Edinburgh plays.
-![Edibourough](https://user-images.githubusercontent.com/8708809/117570956-85224580-b09a-11eb-97fe-2c28845784f0.png)
+![Outcomes vs Goals](/resources/Outcomes_vs_Goals.png?raw=true)
+**Figure 2:** Precentage of successful play Kickstarter fundraisers depending on funding goal.  Includes fundraisers with an outcome of successful, canceled, or failed from the plays subcatagory occuring between May 2009 and March 2017.
 
-## Conclusions:
-Louise's instinct to use kickstarter is correct.  Plays in the US **(Fig. 1)** and musicals in Great Britain **(Fig. 5)** are highly successful kickstarter topics.  Given the increased likelihood of success for theater fundraising campaigns launched in May **(Fig 4)**, I would highly advise that Louise prepare for a May launch date, or if necssary, June.  However, Louise's funding goals may need to be altered.  Her goal for Fever is 10K$, which is well outside the typical pledge range for US plays **(Table 1)**.  In fact, the majority successful campaigns pledge less than 6K$ **(Table 1)**, so I would advise that Louise find a way to decrease her budget significantly.  If this cannot be done, a more in depth analysis on the behavior of successful US play campaigns with high funding goals will be required to give better recomendations on how to market these larger fundraisers.  The data on campaigns from Great Brittain tells a similar story.  Louise's buget of 4KGB is more than double what 75% of musical campaigns are able to pledge **(Fig. 6)**.  Furthermore, the data suggest that using the Edinburgh plays as research for Louise's musical may be misguided.  If those plays were musicials, they would have been highly successful outliers **(Table 2 and Fig 6)**; they are not representative of the behavior for typical GB musical kickstater campaigns.
+### Challenges and Difficulties Encountered
+#### The `COUNTIFS()` formula
+Manually entering the of all formulas for the _Outcomes Based on Goals_ sheet was a seemingly unavoidable task had me mentally screaming to do this work in a real programming language.  It took several tries to figure out the correct format (and type it correctly) for the variable format of COUNTIFS(). When I copied the cells right, the column letters changed.  Luckily, I remembered that the $ marker existed before I got too far on fixing the right-shifted columns letters in the number failed column.  I added $ to the formula letters in the success and recopied the formula, so I only had to change the outcome category after that.  Ideally I would have found a way to programmatically take the outcome name instead of manually putting it into those formulas.  I did not attempt to do that here, because the last time I attempted to use cell references when excel wanted a fixed value function variable, I could not figure out how to get excel to take the cell reference as a pointer to the real valuable.  As it stands, I am still not sure if that is simply impossible or if I just never figured it out.  Manual entry got me passed that step for now.
+
+#### Goal Bins
+I was also a little bit confused about the final row name for the goal bins.  The instructions show “Greater than 50000,” but the previous bin is “45000 to 49999.”  Those two bins in combination suggest that fundraisers with a 50,000$ goal should be excluded from the analysis.  That feels like the wrong behavior.  I believe the intended column name is “50000 or greater.”  That is what I used in my sheet, and my formulas reflect that wording.  There is no fundraiser with a 50K$ goal in the subset of data we are interested in, so perhaps this is a moot point here, but it may have been problematic if we had done further analysis with another set of data that did contain 50K$ goal values.
+
+#### Aesthetics
+Although this was not required, I chose to change the colors of the plots, and wanted success to be associated with green, failed orange, and canceled yellow.  That way, the colors would line up with an American’s intuitive associations for good and bad outcomes, while suiting my own aesthetic tastes and hopefully being colorblind friendly.  Changing to this color scheme for the lines was easy, but it took me some time to discover the “Marker” section to also change the dot color for the lines in the Theater Outcomes Based in Launch Date plot.
+
+
+## Results
+- **What are two conclusions you can draw about the Outcomes based on Launch Date?**
+In May, there is a spike in the number of successful fundraisers, creating the greatest difference between the number of successes and failures based on launch date all year.  That high likelihood of success makes May the ideal month to launch this type of fundraiser (conclusion 1).  This increase in success rate slowly declines as the months progress, reaching the lowest number of successes for the year in December, while the number of failures holds mostly constant.  In that month, the number of failures is about equivalent to the number of successes, meaning the failure rate is approximately 50%.  Thus, December appears to be the worst time to launch a theater fundraising campaign (conclusion 2).
+
+- **What can you conclude about the Outcomes based on Goals?**
+The goals data show that, in general, the fundraising campaigns asking for the least amount of money are the most likely to be successful.  In fact, fundraisers with goals greater than 20,000$ and less than 35,000$ are more likely to fail than succeed.  Thus, for fundraisers seeing under 35,000$, asking for the least amount of money possible maximizes success (conclusion 1).  However, there is a marked increase in the likelihood of success from 35,000$ to 45,000$.  There may be something interesting happening with campaigns in this range, or this could be the result of limited data.  There are 673 fundraisers with goals under 20,000$, but there are only 21 fundraisers with goals of 20,00$ of more.
+
+- **What are some limitations of this dataset?**
+One key limitation is that there is not enough descriptive data.  Factors like pledge rewards, marketing budgets, and proposed timeline and usage of funds should more directly affect the chance of success than the launch date or funding goal out of context.  For the data presented in the finding goal table, the goal amounts were left as raw values despite the fact that different fundraisers used different currencies.  Non-USD fundraisers should be converted to an appropriate USD value based on the fundraiser’s end date prior to being included in the analysis.  Finally, all of these results are purely correlational, and it seems likely that other factors more directly account for these relationships we revealed.  For example, the relationship between launch date and success may be more directly explained by the cash flow of prospective backers.  I would speculate that the low success rate in December may be related to the fact that individuals have less money to spare for Kickstarter fundraisers because they are buying gifts for family and being inundated with fundraisers for charities.  The spike in May and June could be related to the end of school year when high school and college age students have summer jobs and can afford to donate to fundraisers. 
+
+- **What are some other possible tables and/or graphs that we could create?**
+It would be interesting to replicate the launch date analysis on the end date.  Perhaps the end date shows a stronger correlation with success than the start date.  If both the start date and the end date show strong correlations with success, then I would make a table looking at how length of time a fundraiser is live associates with fundraiser success.  The results for launch date, end date, and length of fundraiser combined would allow me to suggest the ideal dates to being and end a theater fundraising campaign.  I stated above that I think marketing will also have a large effect on success, and there is spotlight and staff pick data available in the table.  Although I expect fundraisers with either or both traits to be more successful, it would be interesting to look at the individual and combined effects of these traits.
